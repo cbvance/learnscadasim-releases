@@ -42,9 +42,9 @@ One license file works with both versions.
 **Linux (Docker):**
 
 ```bash
-unzip learnscadasim-0.1.6.zip -d learnscadasim && cd learnscadasim
+unzip learnscadasim-0.1.7.zip -d learnscadasim && cd learnscadasim
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.6.tar
+docker load -i learnscadasim-0.1.7.tar
 docker compose up -d
 ```
 
@@ -66,9 +66,9 @@ folder, so unzipped somewhere new the hub would start empty. In that folder:
 
 ```bash
 docker compose cp learnscadasim:/data/license.lic ./license-backup.lic   # a spare copy of your license
-unzip -o learnscadasim-0.1.6.zip -d .
+unzip -o learnscadasim-0.1.7.zip -d .
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.6.tar
+docker load -i learnscadasim-0.1.7.tar
 docker compose up -d
 ```
 
