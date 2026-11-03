@@ -25,6 +25,8 @@ One license file works with both versions.
   device in one click. Conversion is best effort: depending on the map's layout some registers may be missing, so
   check the result. The **Tech note: preparing a register map** (PDF) and a CSV template cover preparing a map by hand.
 - **The full Modbus address range** (0-65535), up to 10,000 registers per device.
+- **Diagnostic bundle:** one button downloads a zip with versions, settings, logs and conversion details (no passwords
+  or keys) to send with a problem report.
 - **User guide (PDF)** on the hub page and in both downloads, and an **About** badge with the version and links.
 - **Add devices** from PLCSIM workbooks or CSV/JSON register maps, several at once, each on any port you choose.
   You can start, stop, restart and view logs for each device, change its port, or load a new workbook into it.
@@ -40,9 +42,9 @@ One license file works with both versions.
 **Linux (Docker):**
 
 ```bash
-unzip learnscadasim-0.1.5.zip -d learnscadasim && cd learnscadasim
+unzip learnscadasim-0.1.6.zip -d learnscadasim && cd learnscadasim
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.5.tar
+docker load -i learnscadasim-0.1.6.tar
 docker compose up -d
 ```
 
@@ -64,9 +66,9 @@ folder, so unzipped somewhere new the hub would start empty. In that folder:
 
 ```bash
 docker compose cp learnscadasim:/data/license.lic ./license-backup.lic   # a spare copy of your license
-unzip -o learnscadasim-0.1.5.zip -d .
+unzip -o learnscadasim-0.1.6.zip -d .
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.5.tar
+docker load -i learnscadasim-0.1.6.tar
 docker compose up -d
 ```
 
