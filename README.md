@@ -10,7 +10,7 @@ This repository holds the **downloads only**. Get them from [Releases](../../rel
 
 | File | For |
 |---|---|
-| `learnscadasim-<version>.zip` | **Linux with Docker.** The image tarball, `compose.yaml`, `INSTALL.txt` and the traffic generator. |
+| `learnscadasim-<version>.zip` | **Linux with Docker.** The image tarball, `compose.yaml`, `INSTALL.txt`, the User Guide PDF and the traffic generator. |
 | `learnscadasim-<version>-windows-x64.zip` | **Windows 10/11 (64-bit), no Docker.** A portable folder with its own Python. Nothing to install, no admin rights needed. |
 | `*.sha256` | Checksums for each zip. |
 
@@ -20,6 +20,9 @@ One license file works with both versions.
 
 - **Device hub** in the browser at port 8080. A Default sim is already running on Modbus port 502.
 - **Serving on:** the hub page shows which IP addresses it answers on, so you know what to point SCADA at.
+- **Convert a register map from a manual:** give it the device's PDF manual, Word .docx or text file and get the
+  simulator workbook, the Ignition UDT and a **How to implement** PDF, then add the device in one click.
+- **User guide (PDF)** on the hub page and in both downloads, and an **About** badge with the version and links.
 - **Add devices** from PLCSIM workbooks or CSV/JSON register maps, several at once, each on any port you choose.
   You can start, stop, restart and view logs for each device, change its port, or load a new workbook into it.
   A device that crashes restarts on its own.
@@ -34,9 +37,9 @@ One license file works with both versions.
 **Linux (Docker):**
 
 ```bash
-unzip learnscadasim-0.1.3.zip -d learnscadasim && cd learnscadasim
+unzip learnscadasim-0.1.4.zip -d learnscadasim && cd learnscadasim
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.3.tar
+docker load -i learnscadasim-0.1.4.tar
 docker compose up -d
 ```
 
@@ -58,9 +61,9 @@ folder, so unzipped somewhere new the hub would start empty. In that folder:
 
 ```bash
 docker compose cp learnscadasim:/data/license.lic ./license-backup.lic   # a spare copy of your license
-unzip -o learnscadasim-0.1.3.zip -d .
+unzip -o learnscadasim-0.1.4.zip -d .
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.3.tar
+docker load -i learnscadasim-0.1.4.tar
 docker compose up -d
 ```
 
