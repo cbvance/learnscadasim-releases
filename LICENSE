@@ -1,0 +1,16 @@
+LearnSCADASim
+Copyright (c) 2026 Charles Vance / LearnSCADA. All rights reserved.
+
+This software and its source code are proprietary and confidential. They are not open source.
+
+No part of this software may be copied, modified, distributed, sublicensed, sold, or used to build
+another product, except as allowed by a written agreement with LearnSCADA. A customer who received
+LearnSCADASim from LearnSCADA may install and run it on its own computers and networks under the terms
+of that agreement. Without a license file from LearnSCADA the software runs read-only (Modbus writes are
+refused); a license file turns writes on for the term it states. Circumventing that check is not permitted.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR ITS USE. A simulator models a device's
+documented interface only; it is not a substitute for testing with the real device.
