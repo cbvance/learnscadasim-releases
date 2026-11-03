@@ -19,6 +19,7 @@ One license file works with both versions.
 ## What it does
 
 - **Device hub** in the browser at port 8080. A Default sim is already running on Modbus port 502.
+- **Serving on:** the hub page shows which IP addresses it answers on, so you know what to point SCADA at.
 - **Add devices** from PLCSIM workbooks or CSV/JSON register maps, several at once, each on any port you choose.
   You can start, stop, restart and view logs for each device, change its port, or load a new workbook into it.
   A device that crashes restarts on its own.
@@ -33,19 +34,43 @@ One license file works with both versions.
 **Linux (Docker):**
 
 ```bash
-unzip learnscadasim-0.1.2.zip -d learnscadasim && cd learnscadasim
+unzip learnscadasim-0.1.3.zip -d learnscadasim && cd learnscadasim
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.2.tar
+docker load -i learnscadasim-0.1.3.tar
 docker compose up -d
 ```
 
-Then open `http://<this machine>:8080`. To upgrade, run the same commands with the new bundle. Your devices,
-workbooks and license are kept in the Docker volume. `INSTALL.txt` in the bundle covers networking and options.
+Then open `http://<this machine>:8080`. `INSTALL.txt` in the bundle covers networking and options. Put settings
+such as `LSS_PUBLIC_HOST` in a `.env` file next to `compose.yaml`, so updates keep them.
 
 **Windows:** right-click the zip and choose **Extract All**, then double-click **Start LearnSCADASim.bat**. The hub
 opens at http://localhost:8080/. To let other PCs, HMIs or SCADA connect, run
 **Allow through Windows Firewall.bat** as administrator. `README-Windows.txt` in the zip has the details. Your data
 is kept in `%LOCALAPPDATA%\LearnSCADASim`, so you can replace the folder with a newer version without losing it.
+
+## Updating an existing installation
+
+Your devices, workbooks and license are kept outside the program, so an update keeps them, and your license works
+with every later version.
+
+**Linux (Docker):** update in the **same folder** as before. Docker keeps your data in a volume named after that
+folder, so unzipped somewhere new the hub would start empty. In that folder:
+
+```bash
+docker compose cp learnscadasim:/data/license.lic ./license-backup.lic   # a spare copy of your license
+unzip -o learnscadasim-0.1.3.zip -d .
+sha256sum -c SHA256SUMS
+docker load -i learnscadasim-0.1.3.tar
+docker compose up -d
+```
+
+If you changed settings inside `compose.yaml`, move them to `.env` first: the update replaces `compose.yaml`.
+
+**Windows:** close the LearnSCADASim window and rename the old folder. Extract the new zip in its place and copy
+over your `settings.cmd` if you changed it, then start it. If other PCs connect, run
+**Allow through Windows Firewall.bat** again from the new folder.
+
+Full steps, including going back, are in `INSTALL.txt` and `README-Windows.txt`.
 
 ## Licensing: read-only until licensed
 
