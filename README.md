@@ -33,9 +33,9 @@ One license file works with both versions.
 **Linux (Docker):**
 
 ```bash
-unzip learnscadasim-0.1.1.zip -d learnscadasim && cd learnscadasim
+unzip learnscadasim-0.1.2.zip -d learnscadasim && cd learnscadasim
 sha256sum -c SHA256SUMS
-docker load -i learnscadasim-0.1.1.tar
+docker load -i learnscadasim-0.1.2.tar
 docker compose up -d
 ```
 
